@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Кондиціонери — Встановлення, Продаж, Ремонт</title>
+    <link rel="stylesheet" href="style.css?v=25">
+</head>
+
+<body>
+
+    <!-- Фоновый реалистичный туман -->
+    <canvas id="wind-canvas"></canvas>
+
+    <!-- Кондиционер в левом верхнем углу -->
+    <div class="ac-unit" id="ac-unit">
+        <div class="ac-label">AC PRO</div>
+        <div class="ac-body">
+            <div class="ac-louvers">
+                <div class="louver"></div>
+                <div class="louver"></div>
+                <div class="louver"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент поверх тумана -->
+    <div class="app-wrapper">
+        
+        <!-- Header -->
+        <header class="header">
+            <a href="#" class="logo">
+                Konderich
+            </a>
+            <nav class="nav-links">
+                <a href="#services">Послуги</a>
+                <a href="#popular">Популярні моделі</a>
+                <a href="#prices">Ціни</a>
+                <a href="#how">Як ми працюємо</a>
+            </nav>
+            <div class="header-contacts">
+                <div class="phones">
+                    <a href="tel:+380956715145">+ 38 (095) 671 51 45</a>
+                    <a href="tel:+380963968426">+ 38 (096) 396 84 26</a>
+                </div>
+                
+                <div class="socials">
+                    <a href="tg://resolve?domain=YOUR_TELEGRAM" class="social-icon social-telegram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M2.06 9.42l19.45-8.08c.95-.39 1.92.51 1.59 1.48l-6.22 18.52c-.32.95-1.58 1.1-2.13.25l-4.75-7.3-3.66 3.49c-.28.27-.75.07-.75-.33v-4.14l12.87-11.64c.2-.18-.1-.47-.32-.29L5.3 12.33 1.7 11.2c-.88-.28-1.01-1.45-.1-1.85z"/></svg>
+                    </a>
+                    <a href="viber://chat?number=%2B380956715145" class="social-icon social-viber">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M21.36 10.66c-.34-2.82-1.8-5.26-4-6.93-1.8-1.38-4.05-2.03-6.3-1.83-2.13.19-4.14 1.1-5.63 2.57-1.53 1.5-2.52 3.56-2.77 5.75-.15 1.27-.03 2.56.36 3.77.41 1.25 1.06 2.41 1.93 3.39.22.25.29.58.19.9l-.65 2.05c-.17.54.14 1.1.68 1.26.15.05.3.06.46.03l2.67-.47c.33-.06.66 0 .94.19.82.55 1.74.96 2.71 1.2 1.34.33 2.76.36 4.12.09 2.09-.41 3.99-1.44 5.38-2.91 1.38-1.45 2.27-3.39 2.5-5.46.12-1.19 0-2.42-.35-3.57l-.01-.03H21.36zm-3.08 6.44c-.6.6-1.55.95-2.57 1.13-1.12.2-2.28.18-3.38-.07-1.1-.25-2.12-.76-2.99-1.48a1.53 1.53 0 00-1.42-.23l-1.95.34.48-1.5a1.5 1.5 0 00-.23-1.38c-.7-.8-1.2-1.74-1.49-2.76-.29-1.04-.37-2.15-.22-3.23.18-1.37.77-2.67 1.66-3.69 1-1.13 2.33-1.86 3.79-2.06 1.43-.2 2.92 0 4.19.57 1.3.59 2.37 1.54 3.06 2.72.67 1.15.99 2.47.93 3.8-.05 1.33-.51 2.61-1.31 3.66a5.53 5.53 0 01-2.55 1.84z"/><path d="M11.97 7.03c.89.04 1.73.41 2.35 1.02.62.6.99 1.41 1.03 2.26a.5.5 0 101-.04c-.06-1.11-.54-2.16-1.35-2.93-.81-.78-1.91-1.25-3.04-1.31a.5.5 0 10-.04 1l.05.01v-.01z"/><path d="M11.83 4.54c1.55.07 3.01.7 4.08 1.76 1.05 1.04 1.7 2.47 1.76 3.98a.5.5 0 101-.02c-.08-1.76-.84-3.44-2.08-4.66-1.25-1.24-2.95-1.97-4.73-2.05a.5.5 0 10-.05 1h.02v-.01z"/><path d="M17.06 14.18c-.28-.5-.88-.7-1.41-.48l-1.63.68c-.46.19-.99.11-1.38-.2-.36-.28-.69-.61-1-1-.34-.41-.49-.96-.4-1.48l.38-1.99c.12-.6-.18-1.22-.72-1.48l-1.67-.8c-.5-.24-1.09-.16-1.5.21-.38.35-.79.67-1.23.95-.5.32-.73.94-.58 1.52.47 1.84 1.48 3.5 2.87 4.73 1.31 1.15 2.91 1.95 4.63 2.29.58.11 1.13-.19 1.35-.74.19-.48.43-.94.7-1.38.32-.51.27-1.18-.21-1.6z"/></svg>
+                    </a>
+                </div>
+
+                <div class="lang-switcher">
+                    <a href="index.html">RU</a>
+                    <a href="ua.html" class="active">UA</a>
+                </div>
+
+                <a href="#contact" class="btn btn-primary">Викликати майстра</a>
+            </div>
+        
+            <button class="burger-btn" onclick="toggleMobileMenu()">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <button class="close-menu-btn" onclick="toggleMobileMenu()">×</button>
+            <nav class="mobile-nav-links">
+                <a href="#services" onclick="toggleMobileMenu()">Послуги</a>
+                <a href="#popular" onclick="toggleMobileMenu()">Популярні моделі</a>
+                <a href="#prices" onclick="toggleMobileMenu()">Ціни</a>
+                <a href="#how" onclick="toggleMobileMenu()">Як ми працюємо</a>
+            </nav>
+            
+            <div class="mobile-menu-contacts">
+                <a href="tel:+380956715145" class="mobile-phone-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +38 (095) 671 51 45
+                </a>
+                <a href="tel:+380963968426" class="mobile-phone-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +38 (096) 396 84 26
+                </a>
+                <div class="socials" style="justify-content: center; margin-top: 1rem;">
+                    <a href="tg://resolve?domain=YOUR_TELEGRAM" class="social-icon social-telegram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M2.06 9.42l19.45-8.08c.95-.39 1.92.51 1.59 1.48l-6.22 18.52c-.32.95-1.58 1.1-2.13.25l-4.75-7.3-3.66 3.49c-.28.27-.75.07-.75-.33v-4.14l12.87-11.64c.2-.18-.1-.47-.32-.29L5.3 12.33 1.7 11.2c-.88-.28-1.01-1.45-.1-1.85z"/></svg>
+                    </a>
+                    <a href="viber://chat?number=%2B380956715145" class="social-icon social-viber">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M21.36 10.66c-.34-2.82-1.8-5.26-4-6.93-1.8-1.38-4.05-2.03-6.3-1.83-2.13.19-4.14 1.1-5.63 2.57-1.53 1.5-2.52 3.56-2.77 5.75-.15 1.27-.03 2.56.36 3.77.41 1.25 1.06 2.41 1.93 3.39.22.25.29.58.19.9l-.65 2.05c-.17.54.14 1.1.68 1.26.15.05.3.06.46.03l2.67-.47c.33-.06.66 0 .94.19.82.55 1.74.96 2.71 1.2 1.34.33 2.76.36 4.12.09 2.09-.41 3.99-1.44 5.38-2.91 1.38-1.45 2.27-3.39 2.5-5.46.12-1.19 0-2.42-.35-3.57l-.01-.03H21.36zm-3.08 6.44c-.6.6-1.55.95-2.57 1.13-1.12.2-2.28.18-3.38-.07-1.1-.25-2.12-.76-2.99-1.48a1.53 1.53 0 00-1.42-.23l-1.95.34.48-1.5a1.5 1.5 0 00-.23-1.38c-.7-.8-1.2-1.74-1.49-2.76-.29-1.04-.37-2.15-.22-3.23.18-1.37.77-2.67 1.66-3.69 1-1.13 2.33-1.86 3.79-2.06 1.43-.2 2.92 0 4.19.57 1.3.59 2.37 1.54 3.06 2.72.67 1.15.99 2.47.93 3.8-.05 1.33-.51 2.61-1.31 3.66a5.53 5.53 0 01-2.55 1.84z"/><path d="M11.97 7.03c.89.04 1.73.41 2.35 1.02.62.6.99 1.41 1.03 2.26a.5.5 0 101-.04c-.06-1.11-.54-2.16-1.35-2.93-.81-.78-1.91-1.25-3.04-1.31a.5.5 0 10-.04 1l.05.01v-.01z"/><path d="M11.83 4.54c1.55.07 3.01.7 4.08 1.76 1.05 1.04 1.7 2.47 1.76 3.98a.5.5 0 101-.02c-.08-1.76-.84-3.44-2.08-4.66-1.25-1.24-2.95-1.97-4.73-2.05a.5.5 0 10-.05 1h.02v-.01z"/><path d="M17.06 14.18c-.28-.5-.88-.7-1.41-.48l-1.63.68c-.46.19-.99.11-1.38-.2-.36-.28-.69-.61-1-1-.34-.41-.49-.96-.4-1.48l.38-1.99c.12-.6-.18-1.22-.72-1.48l-1.67-.8c-.5-.24-1.09-.16-1.5.21-.38.35-.79.67-1.23.95-.5.32-.73.94-.58 1.52.47 1.84 1.48 3.5 2.87 4.73 1.31 1.15 2.91 1.95 4.63 2.29.58.11 1.13-.19 1.35-.74.19-.48.43-.94.7-1.38.32-.51.27-1.18-.21-1.6z"/></svg>
+                    </a>
+                </div>
+
+                <div class="lang-switcher">
+                    <a href="index.html">RU</a>
+                    <a href="ua.html" class="active">UA</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content fade-up">
+                <button id="demo-ac-btn" class="interactive-demo-btn fade-up">
+                    <span>Вам жарко? 🔥</span>
+                    <strong>Увімкнути кондиціонер</strong>
+                </button>
+
+                <h1>Кондиціонери та мульти спліт системи від 9000 грн.</h1>
+                <div class="hero-bullets">
+                    <div class="bullet"><div class="bullet-icon">✓</div> Гарантія на кондиціонери та встановлення до 5 років</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Обслуговування, чистка, заправка, ремонт від 400 грн.</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Обслужили понад 3000 клієнтів</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Видаємо акт виконаних робіт</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Монтаж та встановлення від 0 грн.</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Досвід роботи понад 10 років</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Виїжджаємо за 30 хвилин</div>
+                    <div class="bullet"><div class="bullet-icon">✓</div> Безкоштовна консультація від майстра</div>
+                </div>
+                
+                <a href="#contact" class="btn btn-primary fade-up" style="padding: 16px 36px; font-size: 1.1rem; display: inline-block;">Залишити заявку на розрахунок</a>
+            </div>
+        </section>
+
+        <!-- Послуги -->
+        <section id="services">
+            <h2 class="section-title fade-up">Наші послуги</h2>
+            <p class="section-subtitle fade-up">Професійний сервіс та встановлення з гарантією</p>
+            <div class="services-carousel-wrapper" style="position: relative;">
+                <div class="swipe-arrows-container">
+                    <svg width="32" height="32" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="animation: pulse-horizontal-rev 1.5s infinite;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="animation: pulse-horizontal 1.5s infinite;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Повне обслуговування кондиціонерів</h3>
+                    <p>Своєчасне обслуговування кондиціонерів та мульти спліт систем подовжує термін служби до 2-х разів. Ми якісно робимо планову профілактику (1 раз у сезон), повну чистку та заправку фреоном. Гарантія до 12 місяців. Від 400 грн.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <h3>Діагностика та ремонт кондиціонерів</h3>
+                    <p>Терміновий виїзд майстра протягом 30 хвилин для ремонту та діагностики. Виконуємо вакуумування та пайку мідних трубок. Швидко повернемо комфортну температуру у ваш дім. Гарантія до 12 місяців. Від 400 грн.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <h3>Прокладання фреонової магістралі</h3>
+                    <p>Передмонтаж (закладання траси до ремонту) та прокладання магістралі в готовому приміщенні. Грамотно підберемо оптимальний маршрут для комунікацій. Від 700 грн.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <h3>Продаж кондиціонерів та спліт-систем</h3>
+                    <p>В наявності техніка для будь-яких площ: 7, 9, 12, 18, 24+. Системи з обігрівом на зиму. Ціна від 9000 грн зі складу. Акція: безкоштовне встановлення при покупці від 25 000 грн.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>Встановлення, монтаж та демонтаж</h3>
+                    <p>Професійне встановлення кращими майстрами з досвідом від 5 років. Виїзд за 30 хвилин. Монтаж на нову або стару трасу від 0 грн при покупці обладнання у нас.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Ідеальний вибір кондиціонера</h3>
+                    <p>Підбираємо рішення для квартири, будинку, офісу та складу: настінні, канальні, касетні, колонні та припливні вентиляції. Безкоштовна консультація.</p>
+                </div>
+            </div>
+            </div> <!-- Close services-carousel-wrapper -->
+
+        </section>
+
+        <!-- Популярні моделі -->
+        <section id="popular">
+<h2 class="section-title fade-up">Популярні моделі</h2>
+<p class="section-subtitle fade-up">Хіти продажу з ідеальним співвідношенням ціни та якості</p>
+
+                <div class="services-carousel-wrapper" style="position: relative;">
+                    <div class="swipe-arrows-container">
+                        <svg width="32" height="32" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="animation: pulse-horizontal-rev 1.5s infinite;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg width="32" height="32" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="animation: pulse-horizontal 1.5s infinite;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                <div class="models-grid fade-up">
+                    <div class="model-card">
+                        <div class="model-img" style="background: white;"><img src="images/mod1.jpg" alt="COOPER&HUNTER CH-S12FTXF-NG" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: left;">Кондиціонер COOPER&HUNTER CH-S12FTXF-NG</h3>
+                        <div class="model-specs-wrapper">
+                            <div class="model-specs-inner">
+                                <p style="text-align: left; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Тип компресора: Інверторний<br>
+                            Встановлення: Настінний<br>
+                            Холод: 3.2 кВт | Тепло: 3.4 кВт<br>
+                            Потужність: 0.99/0.94 кВт<br>
+                            Внутрішній: 25 х 77.3 х 18.5 см<br>
+                            Зовнішній: 59.6 х 84.2 х 32 см
+                        </p>
+                            </div>
+                        </div>
+                        <button class="toggle-specs-btn" onclick="toggleSpecs(this)">
+                            <span>Відкрити характеристики</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="delivery-badge"><span class="badge-dot"></span>Доставимо за 1 ₴</div>
+                        <p class="model-old-price">25 800 ГРН</p>
+                        <p class="model-price">23 500 ГРН</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити</button>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-img" style="background: white;"><img src="images/mod2.jpg" alt="GREE GWH09AAA-K3NNA2A" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: left;">Кондиціонер GREE GWH09AAA-K3NNA2A (BORA)</h3>
+                        <div class="model-specs-wrapper">
+                            <div class="model-specs-inner">
+                                <p style="text-align: left; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Тип компресора: Звичайний<br>
+                            Встановлення: Настінний<br>
+                            Холод: 2.55 кВт | Тепло: 2.65 кВт<br>
+                            Мощность: 0.734/0.794 кВт<br>
+                            Внутрішній: 25 х 69.8 х 18.5 см<br>
+                            Зовнішній: 42.8 х 72 х 31 см
+                        </p>
+                            </div>
+                        </div>
+                        <button class="toggle-specs-btn" onclick="toggleSpecs(this)">
+                            <span>Відкрити характеристики</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="delivery-badge"><span class="badge-dot"></span>Доставимо за 1 ₴</div>
+                        <p class="model-old-price">17 290 ГРН</p>
+                        <p class="model-price">15 720 ГРН</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити</button>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-img" style="background: white;"><img src="images/mod3.jpg" alt="MIDEA AF6-09N1C2-I" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: left;">Кондиционер MIDEA AF6-09N1C2-I/AF6-09N1C2-O</h3>
+                        <div class="model-specs-wrapper">
+                            <div class="model-specs-inner">
+                                <p style="text-align: left; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Тип компресора: Інверторний<br>
+                            Встановлення: Настінний<br>
+                            Холод: 2.65 кВт | Тепло: 2.94 кВт<br>
+                            Мощность: 0.822/0.812 кВт<br>
+                            Внутренний: 28.5 x 71.5 x 19.4 см<br>
+                            Наружный: 49.5 x 72 x 27 см
+                        </p>
+                            </div>
+                        </div>
+                        <button class="toggle-specs-btn" onclick="toggleSpecs(this)">
+                            <span>Відкрити характеристики</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="delivery-badge"><span class="badge-dot"></span>Доставимо за 1 ₴</div>
+                        <p class="model-old-price">18 990 ГРН</p>
+                        <p class="model-price">17 265 ГРН</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити</button>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-img" style="background: white;"><img src="images/mod4.jpg" alt="Idea Samurai" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: left;">Кондиционер Idea Samurai ISR-07HR-SA7-N1</h3>
+                        <div class="model-specs-wrapper">
+                            <div class="model-specs-inner">
+                                <p style="text-align: left; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Тип компресора: Звичайний<br>
+                            Встановлення: Настінний<br>
+                            Теплопроизводительность, кВт: 2.25<br>
+                            Мощность: 655/625 Вт<br>
+                            Внутренний: 28 x 69 x 20 см<br>
+                            Наружный: 42 x 66 x 28 см
+                        </p>
+                            </div>
+                        </div>
+                        <button class="toggle-specs-btn" onclick="toggleSpecs(this)">
+                            <span>Відкрити характеристики</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="delivery-badge"><span class="badge-dot"></span>Доставимо за 1 ₴</div>
+                        <p class="model-old-price">12 650 ГРН</p>
+                        <p class="model-price">11 500 ГРН</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити</button>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-img" style="background: white;"><img src="images/mod5.jpg" alt="HISENSE EXPERT" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: left;">Кондиционер HISENSE EXPERT AS-07UR4SYDDK02G/W</h3>
+                        <div class="model-specs-wrapper">
+                            <div class="model-specs-inner">
+                                <p style="text-align: left; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Тип компресора: Інверторний<br>
+                            Встановлення: Настінний<br>
+                            Внутренний: 27 х 74.5 х 21.4 см<br>
+                            Наружный: 48.2 х 66 х 24 см<br>
+                            Цвет: Белый<br><br>
+                        </p>
+                            </div>
+                        </div>
+                        <button class="toggle-specs-btn" onclick="toggleSpecs(this)">
+                            <span>Відкрити характеристики</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="delivery-badge"><span class="badge-dot"></span>Доставимо за 1 ₴</div>
+                        <p class="model-old-price">16 970 ГРН</p>
+                        <p class="model-price">15 430 ГРН</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити</button>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-img" style="background: white;"><img src="images/mod6.jpg" alt="Idea ISR-09HR" style="max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; text-align: left;">Кондиционер Idea ISR-09HR-SA7-N1</h3>
+                        <div class="model-specs-wrapper">
+                            <div class="model-specs-inner">
+                                <p style="text-align: left; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Тип компресора: Звичайний<br>
+                            Встановлення: Настінний<br>
+                            Холод: 2.5 кВт | Тепло: 2.66 кВт<br>
+                            Мощность: 1.05 / 1.45 кВт<br>
+                            Внутренний: 30 x 80 x 19.8 см<br>
+                            Наружный: 42 x 66.5 x 28 см
+                        </p>
+                            </div>
+                        </div>
+                        <button class="toggle-specs-btn" onclick="toggleSpecs(this)">
+                            <span>Відкрити характеристики</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="delivery-badge"><span class="badge-dot"></span>Доставимо за 1 ₴</div>
+                        <p class="model-old-price">13 750 ГРН</p>
+                        <p class="model-price">12 500 ГРН</p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити</button>
+                    </div>
+                </div>
+            </div> <!-- Close services-carousel-wrapper -->
+
+
+</section>
+
+<!-- Ціни -->
+        <section id="prices">
+            <h2 class="section-title fade-up">Ціни на послуги</h2>
+            <div style="max-width: 800px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 2rem;" class="fade-up">
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f3f4f6;">
+                    <span style="font-weight: 500;">Встановлення та монтаж</span>
+                    <span style="font-weight: 700; color: var(--primary);">від 0 грн</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f3f4f6;">
+                    <span style="font-weight: 500;">Обслуговування та чистка</span>
+                    <span style="font-weight: 700; color: var(--primary);">від 400 грн</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f3f4f6;">
+                    <span style="font-weight: 500;">Заправка фреоном</span>
+                    <span style="font-weight: 700; color: var(--primary);">від 400 грн</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f3f4f6;">
+                    <span style="font-weight: 500;">Ремонт та діагностика</span>
+                    <span style="font-weight: 700; color: var(--primary);">від 400 грн</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0;">
+                    <span style="font-weight: 500;">Прокладання магістралі</span>
+                    <span style="font-weight: 700; color: var(--primary);">від 700 грн</span>
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 1rem; font-weight: bold; color: #ef4444;">*При покупці обладнання у нас на суму від 25 000 грн монтаж надається безкоштовно.</p>
+            </div>
+        </section>
+
+        <!-- Як ми працюємо -->
+        <section id="how">
+            <h2 class="section-title fade-up">Як ми працюємо</h2>
+            <p class="section-subtitle fade-up">Простий та зрозумілий процес від дзвінка до прохолоди</p>            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-step">1</div>
+                    <h3 style="margin-bottom: 0.5rem;">Заявка</h3>
+                    <p style="color: var(--text-muted);">Ви залишаєте заявку на сайті або телефонуєте.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">2</div>
+                    <h3 style="margin-bottom: 0.5rem;">Консультація</h3>
+                    <p style="color: var(--text-muted);">Консультація від майстра з досвідом понад 10 років.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">3</div>
+                    <h3 style="margin-bottom: 0.5rem;">Виїзд</h3>
+                    <p style="color: var(--text-muted);">Виїзд бригади та робота в домовлений час.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">4</div>
+                    <h3 style="margin-bottom: 0.5rem;">Робота</h3>
+                    <p style="color: var(--text-muted);">Перевірка та прийом виконаної роботи.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">5</div>
+                    <h3 style="margin-bottom: 0.5rem;">Оплата</h3>
+                    <p style="color: var(--text-muted);">Оплачуєте наші послуги після перевірки.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">6</div>
+                    <h3 style="margin-bottom: 0.5rem;">Насолода</h3>
+                    <p style="color: var(--text-muted);">Ви насолоджуєтесь прохолодою та свіжістю!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма зворотного зв'язку -->
+        <section id="contact">
+            <h2 class="section-title fade-up">Залишити заявку</h2>
+            <p class="section-subtitle fade-up">Передзвонимо протягом 5 хвилин</p>            
+            <div class="form-container fade-up">
+                <form id="contact-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" ">
+                        <label for="name" class="form-label">Ваше Ім'я (необов'язково)</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder=" " pattern="^(\+?380|0)[0-9]{9}$" title="Введіть номер у форматі +380XXXXXXXXX або 0XXXXXXXXX" required>
+                        <label for="phone" class="form-label">Номер телефону</label>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.1rem;">Залишити заявку</button>
+                    <div id="form-status" style="margin-top: 15px; text-align: center; font-size: 0.95rem; display: none;"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Галерея -->
+        <section id="gallery" style="position: relative;">
+            <h2 class="section-title fade-up">Галерея робіт</h2>            
+            <div class="gallery-container fade-up">
+                <div class="gallery-item"><img src="images/gal1.jpg" alt="Фото 1"></div>
+                <div class="gallery-item"><img src="images/gal2.jpg" alt="Фото 2"></div>
+                <div class="gallery-item"><img src="images/gal3.jpg" alt="Фото 3"></div>
+                <div class="gallery-item"><img src="images/gal4.jpg" alt="Фото 4"></div>
+                <div class="gallery-item"><img src="images/gal5.jpeg" alt="Фото 5"></div>
+                <div class="gallery-item"><img src="images/gal6.jpg" alt="Фото 6"></div>
+            </div>
+            
+            <div class="swipe-arrows-container">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="width: 28px; height: 28px;"><path d="M15 18l-6-6 6-6"/></svg>
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="width: 28px; height: 28px;"><path d="M9 18l6-6-6-6"/></svg>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section id="reviews" style="position: relative;">
+            <h2 class="section-title fade-up">Відгуки клієнтів</h2>            
+                <div class="models-grid fade-up" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                    <div class="model-card" style="text-align: left;">
+                        <div style="display: flex; gap: 4px; color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Ставили три кондиціонери в сезон. Фірма відреагувала на замовлення дуже швидко і оперативно. Співробітники допомогли підібрати оптимальні варіанти для наших моделей. Роботи виконали якісно і акуратно. Кондиціонери працюють справно. Дякуємо)"</p>
+                        <p style="font-weight: 600; margin-top: auto;">Ольга Арестович</p>
+                    </div>
+                    <div class="model-card" style="text-align: left;">
+                        <div style="display: flex; gap: 4px; color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Обслуговування сподобалося, дуже ввічливе. Ціни недорогі, дешевше ніж в інших місцях. І при цьому в плані якості у них повний порядок. Гарантія на кондиціонер оформляється за всіма правилами. Доставка і встановлення були в призначений час."</p>
+                        <p style="font-weight: 600; margin-top: auto;">Ірина</p>
+                    </div>
+                    <div class="model-card" style="text-align: left;">
+                        <div style="display: flex; gap: 4px; color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"За всіма параметрами – класна компанія. По-перше – модельний ряд, по-друге – ціна, по-третє – безкоштовна адресна доставка, по-четверте – сервісна мережа, включаючи монтаж. Бригада приїхала вчасно, зробили все на відмінно. Рекомендую."</p>
+                        <p style="font-weight: 600; margin-top: auto;">Віктор</p>
+                    </div>
+                    <div class="model-card" style="text-align: left;">
+                        <div style="display: flex; gap: 4px; color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Дякую за якісне встановлення кондиціонерів. Менеджеру і Святославу з монтажної бригади особливо - працювали швидко - нарікань немає - Дякую - Рекомендую."</p>
+                        <p style="font-weight: 600; margin-top: auto;">Олег</p>
+                    </div>
+                </div>
+
+            <div class="swipe-arrows-container">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="width: 28px; height: 28px;"><path d="M15 18l-6-6 6-6"/></svg>
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="width: 28px; height: 28px;"><path d="M9 18l6-6-6-6"/></svg>
+            </div>
+        </section>
+        <!-- Футер -->
+        
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo" style="margin-bottom: 1rem; color: white;">
+                        Konderich
+                    </div>
+                    <p style="color: #94a3b8; line-height: 1.6;">Продаж + встановлення, заправка, чистка, ремонт кондиціонерів у Дніпрі, Києві, Кам'янському</p>
+                </div>
+                <div class="footer-contacts" style="text-align: left; align-items: flex-start;">
+                    <h4 style="margin-bottom: 1.5rem; color: #e2e8f0; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">Контакти</h4>
+                    <a href="tel:+380956715145" class="footer-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+380 95 671 51 45</span>
+                    </a>
+                    <a href="tel:+380963968426" class="footer-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+380 96 396 84 26</span>
+                    </a>
+                    <a href="mailto:konderich.dp.ua@gmail.com" class="footer-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>konderich.dp.ua@gmail.com</span>
+                    </a>
+                </div>
+                <div class="footer-messengers" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; min-width: 200px;">
+                    <h4 style="margin-bottom: 1.5rem; color: #e2e8f0; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">Месенджери</h4>
+                    <a href="tg://resolve?domain=YOUR_TELEGRAM" class="footer-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="viber://chat?number=%2B380956715145" class="footer-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        <span>Viber</span>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; color: #64748b; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem;">
+                © 2026 Konderich. Всі права захищені.
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="success-overlay" class="success-overlay">
+        <div class="success-modal">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <h3>Дякуємо за заявку!</h3>
+            <p>Наш менеджер зв'яжеться з вами протягом 5 хвилин.</p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Повернутися на головну</button>
+        </div>
+    </div>
+
+    <!-- Анимации скролла (Intersection Observer) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Если это таймлайн, анимируем дочерние элементы с задержкой
+                        if (entry.target.classList.contains('timeline-item')) {
+                            // Already handled individually
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Анимируем все блоки fade-up
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            
+            // Анимируем шаги таймлайна с задержкой (последовательно)
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.transitionDelay = `${index * 0.2}s`;
+                observer.observe(item);
+            });
+        });
+    </script>
+
+    <!-- Скрипт фонового пара (интегрирован из ff.html) -->
+    <script>
+        (function () {
+            const canvas = document.getElementById('wind-canvas');
+            let ctx = canvas.getContext('2d', { alpha: true });
+            let width, height;
+
+            // Логика состояний
+            let isCoolOn = false;   // Выключен по умолчанию
+            let transitionProgress = 0.0;   
+            let targetProgress = 0.0;
+
+            let sourceX = 0;
+            let sourceY = 0;
+
+            function createPuffCanvas(r, g, b) {
+                const size = 128; 
+                const offCanvas = document.createElement('canvas');
+                offCanvas.width = size;
+                offCanvas.height = size;
+                const offCtx = offCanvas.getContext('2d');
+                
+                const grad = offCtx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+                grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.08)`);
+                grad.addColorStop(0.4, `rgba(${r}, ${g}, ${b}, 0.03)`);
+                grad.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+                
+                offCtx.fillStyle = grad;
+                offCtx.fillRect(0, 0, size, size);
+                return offCanvas;
+            }
+
+            const coolPuff = createPuffCanvas(0, 150, 255);   
+            const heatPuff = createPuffCanvas(255, 100, 40);  
+
+            const particles = [];
+            const MAX_PARTICLES = 300; 
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                    this.life = Math.random();
+                    this.x += this.vx * this.life * 500;
+                    this.y += this.vy * this.life * 500;
+                }
+
+                reset() {
+                    this.x = sourceX + (Math.random() - 0.5) * 20;
+                    this.y = sourceY + (Math.random() - 0.5) * 20;
+                    this.vx = 4 + Math.random() * 4;
+                    this.vy = -1 + Math.random() * 2;
+                    this.life = 1.0; 
+                    this.decay = 0.002 + Math.random() * 0.003; 
+                    this.scale = 0.5 + Math.random() * 0.5; 
+                    this.seed = Math.random() * 1000; 
+                    this.dropX = width * (0.4 + Math.random() * 0.5); // Точка падения: от 40% до 90% ширины
+                }
+
+                update(time) {
+                    this.life -= this.decay;
+                    if (this.life <= 0 || this.x > width + 200 || this.y > height + 200) {
+                        this.reset();
+                    }
+
+                    const turbulenceX = Math.sin(this.y * 0.005 + time * 0.001 + this.seed) * 0.5;
+                    const turbulenceY = Math.cos(this.x * 0.005 - time * 0.001 + this.seed) * 0.5;
+
+                    let targetVx, targetVy;
+                    
+                    if (this.x > this.dropX) {
+                        // Зона падения: пар обрушивается вниз справа
+                        targetVx = 1 + Math.random() * 1.5 + turbulenceX;
+                        targetVy = 5 + Math.random() * 3 + turbulenceY;
+                    } else {
+                        // Зона пролета: пар летит вправо по верху экрана
+                        targetVx = 5 + Math.random() * 3 + turbulenceX;
+                        
+                        // Держим пар подальше от текста (отталкиваем от центра по вертикали)
+                        // Заголовок обычно начинается ниже 200px, поэтому стараемся держать пар выше
+                        if (this.y > 150) {
+                            targetVy = -1.5; // Выталкиваем наверх
+                        } else {
+                            targetVy = 0.5 + turbulenceY; // Легкий дрейф
+                        }
+                    }
+
+                    // Плавное изменение скорости для создания дуги
+                    this.vx += (targetVx - this.vx) * 0.05;
+                    this.vy += (targetVy - this.vy) * 0.05;
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.scale += 0.005;
+                }
+
+                draw(ctx, currentProgress) {
+                    let alpha = 1;
+                    if (this.life > 0.9) alpha = (1 - this.life) * 10; 
+                    else if (this.life < 0.3) alpha = this.life / 0.3; 
+                    
+                    // Восстановлена плотность
+                    alpha *= 0.7;
+
+                    const drawSize = 128 * this.scale;
+                    const halfSize = drawSize / 2;
+
+                    if (currentProgress > 0.01) {
+                        ctx.globalAlpha = alpha * currentProgress;
+                        ctx.drawImage(coolPuff, this.x - halfSize, this.y - halfSize, drawSize, drawSize);
+                    }
+                    if (currentProgress < 0.99) {
+                        ctx.globalAlpha = alpha * (1 - currentProgress);
+                        ctx.drawImage(heatPuff, this.x - halfSize, this.y - halfSize, drawSize, drawSize);
+                    }
+                }
+            }
+
+            for (let i = 0; i < MAX_PARTICLES; i++) {
+                particles.push(new Particle());
+            }
+
+            function updateTransition() {
+                if (Math.abs(targetProgress - transitionProgress) < 0.01) {
+                    transitionProgress = targetProgress;
+                } else {
+                    transitionProgress += (targetProgress - transitionProgress) * 0.02; // Плавное появление
+                }
+            }
+
+            function animate(timestamp) {
+                updateTransition();
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalCompositeOperation = 'screen';
+
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update(timestamp);
+                    particles[i].draw(ctx, transitionProgress);
+                }
+
+                ctx.globalCompositeOperation = 'source-over';
+                requestAnimationFrame(animate);
+            }
+
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+                
+                const acEl = document.getElementById('ac-unit');
+                if (acEl) {
+                    const rect = acEl.getBoundingClientRect();
+                    sourceX = rect.right - 10;
+                    sourceY = rect.bottom - 10;
+                }
+            }
+
+            const demoBtn = document.getElementById('demo-ac-btn');
+            if(demoBtn) {
+                demoBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    isCoolOn = true;
+                    targetProgress = 1.0;
+                    demoBtn.classList.add('active');
+                    demoBtn.innerHTML = '<span>❄️ Працює</span><strong>Насолоджуйтеся прохолодою</strong>';
+                });
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            setTimeout(() => {
+                resizeCanvas();
+                animate(0);
+            }, 50);
+
+        })();
+    </script>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        }
+    </script>
+
+    <script>
+        // Force scroll to top on page load
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('load', function() {
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
+            }
+        });
+    </script>
+
+    <script>
+        function toggleSpecs(btn) {
+            btn.classList.toggle('open');
+            var wrapper = btn.previousElementSibling;
+            if (wrapper && wrapper.classList.contains('model-specs-wrapper')) {
+                wrapper.classList.toggle('open');
+            }
+            var span = btn.querySelector('span');
+            if (btn.classList.contains('open')) {
+                span.textContent = 'Сховати характеристики';
+            } else {
+                span.textContent = 'Відкрити характеристики';
+            }
+        }
+
+        async function submitForm(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const btn = document.getElementById('submit-btn');
+            const status = document.getElementById('form-status');
+            
+            // Состояние отправки
+            btn.disabled = true;
+            btn.textContent = 'Відправка...';
+            status.style.display = 'none';
+            status.className = '';
+            
+            try {
+                // Имитация задержки сети для демонстрации (1 секунда)
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // ЗАХАРДКОЖЕНО: Всегда считаем отправку успешной для теста UI
+                // В будущем здесь снова будет: const response = await fetch('telegram.php', ...);
+                
+                // Показываем красивое модальное окно успеха
+                document.getElementById('success-overlay').classList.add('active');
+                form.reset();
+            } catch (error) {
+                status.style.display = 'block';
+                status.style.color = '#ef4444';
+                status.textContent = 'Помилка мережі. Будь ласка, спробуйте пізніше.';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Залишити заявку';
+                
+                if(status.style.display === 'block') {
+                    setTimeout(() => {
+                        status.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-overlay').classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
