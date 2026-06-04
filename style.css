@@ -139,7 +139,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav-links a {
@@ -148,9 +148,10 @@ body {
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
-    padding: 8px 16px;
+    padding: 8px 10px;
     border-radius: 20px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -161,7 +162,7 @@ body {
 .header-contacts {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .phones {
@@ -175,6 +176,7 @@ body {
     color: var(--text-main);
     text-decoration: none;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 .phones a:hover { color: var(--primary); }
 
@@ -213,6 +215,7 @@ body {
     cursor: pointer;
     transition: var(--transition);
     border: none;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -226,6 +229,66 @@ body {
     background: var(--primary-dark);
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
+}
+
+/* Fix for MacBook screens (1024px - 1440px) */
+@media (max-width: 1440px) {
+    .header {
+        padding: 0 15px;
+        left: 110px; /* Adjust for AC Unit */
+        right: 15px;
+    }
+    .nav-links {
+        gap: 0.8rem;
+    }
+    .nav-links a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+    .header-contacts {
+        gap: 0.8rem;
+    }
+    .header-contacts .socials {
+        display: none;
+    }
+    .phones {
+        font-size: 0.8rem;
+    }
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+    }
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    .header-contacts .btn {
+        padding: 10px 20px !important;
+        font-size: 0.85rem !important;
+    }
+    .lang-switcher a {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    .header-contacts .socials,
+    .header-contacts .phones {
+        display: none;
+    }
+    .nav-links {
+        gap: 0.5rem;
+    }
+    .nav-links a {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    .header-contacts .btn {
+        padding: 8px 16px !important;
+        font-size: 0.8rem !important;
+    }
 }
 
 /* Interactive Demo Button */
