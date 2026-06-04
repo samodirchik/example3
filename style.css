@@ -1477,3 +1477,115 @@ body.no-scroll {
     background: var(--primary);
     color: white;
 }
+
+/* Mobile Lang Switcher in Header */
+.mobile-lang-switcher {
+    display: none;
+}
+@media (max-width: 992px) {
+    .header .logo {
+        order: 2;
+        margin: 0 auto;
+        
+    }
+    .burger-btn {
+        order: 3;
+    }
+    .mobile-lang-switcher {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: var(--bg-secondary);
+        padding: 4px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        order: 1;
+        margin-right: auto;
+        border: 1px solid var(--border-glass);
+    }
+    .mobile-lang-switcher a {
+        color: var(--text-muted);
+        text-decoration: none;
+        padding: 4px 8px;
+        border-radius: 12px;
+        transition: var(--transition);
+    }
+    .mobile-lang-switcher a.active {
+        background: var(--primary);
+        color: white;
+    }
+}
+
+@media (max-width: 576px) {
+    .interactive-demo-btn strong {
+        font-size: 0.9rem !important;
+        white-space: normal;
+        line-height: 1.3;
+    }
+    .interactive-demo-btn {
+        padding: 15px 20px;
+    }
+}
+
+/* Neon Arrow inside active button */
+.neon-arrow {
+    display: block;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 15px var(--primary-light);
+    animation: neon-bounce 1.5s infinite;
+}
+@keyframes neon-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+/* Highlighted Accent Button for Call to Actions */
+.btn-accent {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    color: white !important;
+    border: none;
+    border-radius: var(--radius-btn);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    animation: pulse-accent 2s infinite;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.btn-accent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    background: linear-gradient(135deg, #0284c7, #1d4ed8);
+}
+@keyframes pulse-accent {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+/* Ice Arrow Animation */
+.ice-arrow {
+    display: block;
+    margin: 10px auto 0;
+    font-size: 2.5rem;
+    color: #e0f2fe;
+    text-shadow: 0 0 15px #38bdf8;
+    -webkit-animation: drop-ice 2s infinite ease-in-out;
+    animation: drop-ice 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes drop-ice {
+    0% { transform: translateY(-15px); opacity: 0; color: #ffffff; }
+    30% { transform: translateY(0); opacity: 1; text-shadow: 0 0 15px #7dd3fc; }
+    70% { transform: translateY(10px); opacity: 1; color: #38bdf8; text-shadow: 0 0 25px #0284c7; }
+    100% { transform: translateY(25px); opacity: 0; color: #0284c7; }
+}
+
+@keyframes drop-ice {
+    0% { transform: translateY(-15px); opacity: 0; color: #ffffff; }
+    30% { transform: translateY(0); opacity: 1; text-shadow: 0 0 15px #7dd3fc; }
+    70% { transform: translateY(10px); opacity: 1; color: #38bdf8; text-shadow: 0 0 25px #0284c7; }
+    100% { transform: translateY(25px); opacity: 0; color: #0284c7; }
+}
