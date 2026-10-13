@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://konderich.dp.ua/sitemap.xml

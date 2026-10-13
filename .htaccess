@@ -1,0 +1,9 @@
+# Enable URL Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 301 permanent redirects for deprecated language paths and pages
+    RewriteRule ^(ua\.html|ru\.html)$ / [R=301,L]
+    RewriteRule ^(ru|uk)(/.*)?$ / [R=301,L]
+</IfModule>

@@ -1,11 +1,11 @@
 <?php
 // ==========================================
-// НАСТРОЙКИ TELEGRAM БОТА
+// TELEGRAM BOT SETTINGS
 // ==========================================
 $token = "";
 $chat_id = "";
 
-// Разрешаем CORS
+// Allow CORS
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Content-Type: application/json; charset=utf-8');
@@ -17,15 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($phone)) {
         http_response_code(400);
-        echo json_encode(['status' => 'error', 'message' => 'Не передан номер телефона.']);
+        echo json_encode(['status' => 'error', 'message' => 'Phone number is required.']);
         exit;
     }
 
-    $txt = "🚀 <b>Новая заявка с сайта Konderich!</b>\n\n";
+    $txt = "🚀 <b>New request from Konderich website!</b>\n\n";
     if (!empty($name)) {
-        $txt .= "👤 <b>Имя:</b> " . $name . "\n";
+        $txt .= "👤 <b>Name:</b> " . $name . "\n";
     }
-    $txt .= "📞 <b>Телефон:</b> " . $phone . "\n";
+    $txt .= "📞 <b>Phone:</b> " . $phone . "\n";
 
     $url_api = "https://api.telegram.org/bot{$token}/sendMessage";
 
@@ -45,22 +45,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = curl_exec($ch);
     $error = curl_error($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     if ($http_code == 200) {
         http_response_code(200);
-        echo json_encode(['status' => 'success', 'message' => 'Заявка отправлена']);
+        echo json_encode(['status' => 'success', 'message' => 'Request successfully sent']);
     } else {
         http_response_code(500);
         echo json_encode([
             'status' => 'error',
-            'message' => 'Ошибка отправки в Telegram',
+            'message' => 'Failed to send to Telegram',
             'telegram_error' => $error,
             'result' => $result
         ]);
     }
 } else {
     http_response_code(405);
-    echo json_encode(['status' => 'error', 'message' => 'Недопустимый метод запроса.']);
+    echo json_encode(['status' => 'error', 'message' => 'Method not allowed.']);
 }
 ?>
