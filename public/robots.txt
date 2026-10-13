@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://konderich.dp.ua/sitemap.xml
+Sitemap: https://samodirchik.github.io/example3/sitemap.xml
