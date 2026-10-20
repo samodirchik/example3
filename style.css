@@ -13,13 +13,13 @@ button:focus, a:focus {
 
 :root {
     /* Color Palette: Neutral-Cool (Sky Blue & Slate) */
-    --primary: #0ea5e9;
-    --primary-light: #38bdf8;
-    --primary-dark: #0284c7;
+    --primary: #0369a1;
+    --primary-light: #0284c7;
+    --primary-dark: #075985;
     --primary-soft: #e0f2fe;
     
     --text-main: #0f172a;
-    --text-muted: #64748b;
+    --text-muted: #475569;
     
     --bg-main: #ffffff;
     --bg-glass: rgba(255, 255, 255, 0.9);
@@ -129,7 +129,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #0284c7;
+    color: #0369a1;
     text-decoration: none;
     letter-spacing: -0.5px;
     display: flex;
@@ -342,7 +342,7 @@ body {
     color: #64748b;
 }
 .interactive-demo-btn.active span {
-    color: #0284c7;
+    color: #0369a1;
 }
 .interactive-demo-btn strong {
     font-size: 0.95rem;
@@ -583,7 +583,7 @@ section {
 .toggle-specs-btn {
     background: none;
     border: none;
-    color: #3b82f6;
+    color: #0369a1;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
@@ -598,7 +598,7 @@ section {
     z-index: 11;
 }
 .toggle-specs-btn:hover {
-    color: #1d4ed8;
+    color: #075985;
 }
 .toggle-specs-btn svg {
     transition: transform 0.3s ease;
@@ -937,9 +937,12 @@ section {
     transform: translateY(40px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+.fade-up.visible,
+.has-hash .fade-up,
+.has-hash .timeline-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 
@@ -1133,7 +1136,7 @@ body.no-scroll {
 /* Prices */
 .model-card .model-old-price {
     font-size: 1.1rem;
-    color: #9ca3af;
+    color: #64748b;
     text-decoration: line-through;
     margin-bottom: 0.2rem;
     text-align: left;

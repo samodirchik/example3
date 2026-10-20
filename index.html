@@ -36,7 +36,12 @@
     <meta name="twitter:description" content="Professional AC Tune-Up from $89, Diagnostic $79, EPA refrigerant recharge from $169, new mini-split install from $1,899. 24/7 service.">
     <meta name="twitter:image" content="https://samodirchik.github.io/example3/images/og-image.jpg">
 
-    <link rel="stylesheet" href="style.css?v=28">
+    <script>
+        if (window.location.hash) {
+            document.documentElement.classList.add('has-hash');
+        }
+    </script>
+    <link rel="stylesheet" href="style.css?v=30">
 </head>
 
 <body>
@@ -126,15 +131,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <main id="main-content">
         <!-- Hero -->
         <section class="hero">
-            <div class="hero-content fade-up">
-                <button id="demo-ac-btn" class="interactive-demo-btn fade-up">
+            <div class="hero-content">
+                <button id="demo-ac-btn" class="interactive-demo-btn">
                     <span>NEED TO COOL DOWN? ❄️</span>
                     <strong>Power Up the AC</strong>
                 </button>
 
                 <h1>Mini-Split & Central AC Solutions: Equipment + Installation from $1,899</h1>
                 
-                <div class="cert-trust-bar fade-up">
+                <div class="cert-trust-bar">
                     <span class="cert-badge">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         EPA Section 608 Universal Certified
@@ -160,7 +165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="bullet"><div class="bullet-icon">✓</div> Up to 10-Year Equipment & Labor Warranty</div>
                 </div>
                 
-                <a href="#contact" class="btn btn-accent fade-up" style="padding: 16px 36px; font-size: 1.1rem; display: inline-block; border-radius: 30px;">Request a Quote / Book Online</a>
+                <a href="#contact" class="btn btn-accent" style="padding: 16px 36px; font-size: 1.1rem; display: inline-block; border-radius: 30px;">Request a Quote / Book Online</a>
             </div>
         </section>
 
@@ -460,9 +465,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Contact Form -->
         <section id="contact">
-            <h2 class="section-title fade-up">FREE EXPERT CONSULTATION</h2>
-            <p class="section-subtitle fade-up">We'll call you back within 5 minutes</p>            
-            <div class="form-container fade-up">
+            <h2 class="section-title">FREE EXPERT CONSULTATION</h2>
+            <p class="section-subtitle">We'll call you back within 5 minutes</p>            
+            <div class="form-container">
                 <form id="contact-form" onsubmit="submitForm(event)">
                     <div class="form-group">
                         <input type="text" id="name" name="name" class="form-input" placeholder=" ">
@@ -617,13 +622,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }, observerOptions);
 
             // Animate all fade-up elements
-            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            if (window.location.hash) {
+                document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+            } else {
+                document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            }
             
             // Animate timeline steps with sequential delay
             const timelineItems = document.querySelectorAll('.timeline-item');
             timelineItems.forEach((item, index) => {
-                item.style.transitionDelay = `${index * 0.2}s`;
-                observer.observe(item);
+                if (window.location.hash) {
+                    item.classList.add('visible');
+                } else {
+                    item.style.transitionDelay = `${index * 0.2}s`;
+                    observer.observe(item);
+                }
             });
         });
     </script>
@@ -664,7 +677,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const heatPuff = createPuffCanvas(255, 100, 40);  
 
             const particles = [];
-            const MAX_PARTICLES = 300; 
+            const MAX_PARTICLES = 30; 
 
             class Particle {
                 constructor() {
@@ -751,7 +764,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             }
 
+            let isVisible = true;
+            let animId = null;
+
             function animate(timestamp) {
+                if (!isVisible) {
+                    animId = null;
+                    return;
+                }
                 updateTransition();
                 ctx.clearRect(0, 0, width, height);
                 ctx.globalCompositeOperation = 'screen';
@@ -762,7 +782,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
 
                 ctx.globalCompositeOperation = 'source-over';
-                requestAnimationFrame(animate);
+                animId = requestAnimationFrame(animate);
+            }
+
+            const acElem = document.getElementById('ac-unit');
+            if (window.IntersectionObserver && acElem) {
+                const obs = new IntersectionObserver(([entry]) => {
+                    isVisible = entry.isIntersecting;
+                    if (isVisible && !animId) {
+                        animId = requestAnimationFrame(animate);
+                    }
+                }, { threshold: 0 });
+                obs.observe(acElem);
             }
 
             function resizeCanvas() {
