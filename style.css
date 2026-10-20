@@ -129,7 +129,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: #0284c7;
     text-decoration: none;
     letter-spacing: -0.5px;
     display: flex;
@@ -806,14 +806,17 @@ section {
 .footer-contact-link {
     display: inline-flex !important;
     align-items: center;
-    color: var(--text-muted) !important;
+    color: #cbd5e1 !important;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-origin: left center; /* changed to left center */
+    transform-origin: left center;
 }
-.footer-contact-link:hover {
+.footer-contact-link span {
+    color: #cbd5e1 !important;
+}
+.footer-contact-link:hover, .footer-contact-link:hover span {
     color: #ffffff !important;
-    transform: translateX(5px) scale(1.02); /* move right instead of left */
+    transform: translateX(5px) scale(1.02);
 }
 
 .footer-socials {
@@ -1101,8 +1104,8 @@ body.no-scroll {
 .delivery-badge {
     display: inline-flex;
     align-items: center;
-    background-color: #e0e7ff;
-    color: #3b82f6;
+    background-color: #dbeafe;
+    color: #1e40af;
     padding: 0.35rem 0.8rem;
     border-radius: 9999px;
     font-size: 0.8rem;
@@ -1116,7 +1119,7 @@ body.no-scroll {
 .badge-dot {
     width: 8px;
     height: 8px;
-    background-color: #3b82f6;
+    background-color: #1e40af;
     border-radius: 50%;
     margin-right: 0.5rem;
     animation: blink-dot 1.5s infinite;
