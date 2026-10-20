@@ -11,13 +11,7 @@
     <meta name="description" content="Certified HVAC services: AC Tune-up from $89, Diagnostic $79 (waived with repair), EPA refrigerant leak test & recharge from $169, new system install from $1,899. NATE certified.">
     <link rel="canonical" href="https://samodirchik.github.io/example3/">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PLTLF88');</script>
-    <!-- End Google Tag Manager -->
+    <!-- GTM removed -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -45,10 +39,7 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLTLF88"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    
 
     <!-- Realistic background mist -->
     <canvas id="wind-canvas"></canvas>
@@ -470,11 +461,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="form-container">
                 <form id="contact-form" onsubmit="submitForm(event)">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-input" placeholder=" ">
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" " autocomplete="name">
                         <label for="name" class="form-label">Your Name (optional)</label>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" name="phone" class="form-input" placeholder=" " required>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder=" " required autocomplete="tel">
                         <label for="phone" class="form-label">Phone Number</label>
                     </div>
                     <button type="submit" id="submit-btn" class="btn btn-accent" style="width: 100%; padding: 14px; font-size: 1.1rem;">Get a Free Consultation</button>
@@ -664,8 +655,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 const offCtx = offCanvas.getContext('2d');
                 
                 const grad = offCtx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
-                grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.08)`);
-                grad.addColorStop(0.4, `rgba(${r}, ${g}, ${b}, 0.03)`);
+                grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.14)`);
+                grad.addColorStop(0.4, `rgba(${r}, ${g}, ${b}, 0.05)`);
                 grad.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
                 
                 offCtx.fillStyle = grad;
@@ -673,11 +664,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 return offCanvas;
             }
 
-            const coolPuff = createPuffCanvas(0, 150, 255);   
-            const heatPuff = createPuffCanvas(255, 100, 40);  
+            const coolPuff = createPuffCanvas(0, 160, 255);   
+            const heatPuff = createPuffCanvas(255, 110, 45);  
 
             const particles = [];
-            const MAX_PARTICLES = 30; 
+            const MAX_PARTICLES = 250; 
 
             class Particle {
                 constructor() {
@@ -736,7 +727,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     if (this.life > 0.9) alpha = (1 - this.life) * 10; 
                     else if (this.life < 0.3) alpha = this.life / 0.3; 
                     
-                    alpha *= 0.7;
+                    alpha *= 0.85;
 
                     const drawSize = 128 * this.scale;
                     const halfSize = drawSize / 2;
